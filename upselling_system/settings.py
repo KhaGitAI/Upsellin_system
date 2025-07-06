@@ -37,9 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recommendation',
+    'recommendation',  
 
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,13 +81,10 @@ WSGI_APPLICATION = 'upselling_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'upselling',       # اسم قاعدة البيانات اللي أنشأتها
-        'USER': 'root',              # اسم المستخدم في MySQL
-        'PASSWORD': '',              # كلمة المرور (ضعها إذا ضبطتها)
-        'HOST': 'localhost',
-        'PORT': '3306',
+                'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+
 }
 
 
