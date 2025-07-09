@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from recommendation.domain.models import AIModelMetrics
 from rest_framework.permissions import AllowAny
-from recommendation.core.premmission import IsAdminUser 
+# from recommendation.core.premmission import IsAdminUser 
 class AIPerformanceReportView(APIView):
     permission_classes = [AllowAny]
     def get(self, request):

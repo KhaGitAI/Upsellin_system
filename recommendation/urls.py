@@ -3,6 +3,8 @@ from recommendation.presentation.views.auth_views import RegisterView, LoginView
 from recommendation.presentation.views.profile_view import UserProfileView, UpdateProfileView
 from recommendation.presentation.views.stats_views import HomeDashboardView
 from recommendation.presentation.views.AI_report_view import AIModelMetrics
+from recommendation.presentation.views.admin_auth import AdminRegisterView,AdminLoginView
+
 from recommendation.presentation.views.usage_views import (
     ActivePackageView, AddUsageLogView, ActivatedPackagesView,
     UsageLogListView, UsagePercentageView, MonthlyUsageStatsView
@@ -52,6 +54,8 @@ urlpatterns = [
     path('users/<int:user_id>/prediction-vs-actual/', UserPredictionVsActualView.as_view(), name="user_prediction_vs_actual"),
     path('report/ai/', AIPerformanceReportView.as_view(), name="ai_report"), 
     path("accuracy/", GeneratePredictionAccuracyView.as_view()),
+    path("admin/register/", AdminRegisterView.as_view()),
+    path("admin/login/", AdminLoginView.as_view()),
 
 ]
     
